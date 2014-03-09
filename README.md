@@ -9,3 +9,4 @@
   * Templating with EJS
   * Static cache with st https://github.com/isaacs/st
   * Winston logger
+  * MongoDB with mongoose
