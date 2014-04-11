@@ -4,7 +4,7 @@
 
 ## Features
 
-  * Express 3
+  * Express 4
   * Sessions with redis
   * Templating with EJS
   * Static cache with st https://github.com/isaacs/st

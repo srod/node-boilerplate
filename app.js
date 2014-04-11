@@ -6,14 +6,11 @@ var app = express();
 // Require the logger, log entire app
 require(__dirname + '/config/logger');
 
-// Load express configuration
-require(__dirname + '/config/env')(express, app);
-
 // Load database
 require(__dirname + '/config/database');
 
-// Load routes
-require(__dirname + '/routes')(app);
+// Load express configuration
+require(__dirname + '/config/env')(express, app);
 
 // Start the server
 app.listen(3000);
