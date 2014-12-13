@@ -10,26 +10,26 @@ var fs = require('fs');
  */
 
 var connect = function() {
-    var options = { server: { socketOptions: { keepAlive: 1 } } };
-    mongoose.connect(config.db, options);
+  var options = {server: {socketOptions: {keepAlive: 1}}};
+  mongoose.connect(config.db, options);
 };
 
 connect();
 
 // Error handler
 mongoose.connection.on('error', function(err) {
-    console.log(err);
+  console.log(err);
 });
 
 // Reconnect when closed
 mongoose.connection.on('disconnected', function() {
-    connect();
+  connect();
 });
 
 // Bootstrap models
 var modelsPath = __dirname + '/../models';
 fs.readdirSync(modelsPath).forEach(function(file) {
-    if (file.indexOf('.js') > -1) {
-        require(modelsPath + '/' + file);
-    }
+  if (file.indexOf('.js') > -1) {
+    require(modelsPath + '/' + file);
+  }
 });
